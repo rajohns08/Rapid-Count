@@ -1,11 +1,3 @@
-//
-//  HomeScreen.m
-//  svtest
-//
-//  Created by adam on 3/6/13.
-//  Copyright (c) 2013 adam. All rights reserved.
-//
-
 #import "HomeScreen.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -19,8 +11,6 @@
 @synthesize startCounting;
 @synthesize howToCount;
 @synthesize settings;
-@synthesize rapidLogo;
-@synthesize countLogo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

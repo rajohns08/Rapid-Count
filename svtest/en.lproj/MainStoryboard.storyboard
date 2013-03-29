@@ -359,6 +359,58 @@
         <image name="rapidCountTitle.png" width="640" height="400"/>
         <image name="suitstrans4.png" width="300" height="300"/>
     </resources>
+    <classes>
+        <class className="HomeScreen" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeScreen.h"/>
+            <relationships>
+                <relationship kind="outlet" name="countLogo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="howToCount" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rapidLogo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="settings" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="startCounting" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="InfoScreen" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoScreen.h"/>
+            <relationships>
+                <relationship kind="outlet" name="infoScroll" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NSTimer" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSTimer.h"/>
+        </class>
+        <class className="PlayScreen" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayScreen.h"/>
+            <relationships>
+                <relationship kind="action" name="callTimer:"/>
+                <relationship kind="action" name="cancelTimer:"/>
+                <relationship kind="action" name="click:"/>
+                <relationship kind="action" name="goToHomeScreen:"/>
+                <relationship kind="action" name="showCount:"/>
+                <relationship kind="action" name="startCountdown:"/>
+                <relationship kind="outlet" name="countdown" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="displayImageTimer" candidateClass="NSTimer"/>
+                <relationship kind="outlet" name="home" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="showCount" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="start" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="viewCard" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SettingsScreen" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsScreen.h"/>
+            <relationships>
+                <relationship kind="action" name="resetSettings:"/>
+                <relationship kind="action" name="speedSlider:"/>
+                <relationship kind="outlet" name="reset" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sliderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="speedSlidePos" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
