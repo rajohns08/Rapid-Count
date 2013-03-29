@@ -26,13 +26,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Create an array including each button
     NSArray *buttons = [NSArray arrayWithObjects: self.startCounting, self.howToCount, self.settings, nil];
     
+    // Add gradient effects to every button
     for(UIButton *btn in buttons)
     {
-        
-        // BEGIN WORKING FROM TUTORIAL HERE
-        
         // Set the button Text Color
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor cyanColor] forState:UIControlStateHighlighted];
@@ -63,8 +62,8 @@
         
     }
     
+    // Set the background image using the black gradient image
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackGradient.png"]];
-    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"table.png"]];
 
 }
 

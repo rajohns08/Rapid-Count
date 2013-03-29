@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "svtest/SettingsScreen.m"
-         timestampString = "384407634.189045"
+         timestampString = "386216422.169964"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
+         startingLineNumber = "48"
+         endingLineNumber = "48"
          landmarkName = "@implementation SettingsScreen"
          landmarkType = "3">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "svtest/SettingsScreen.m"
-         timestampString = "384419975.9918"
+         timestampString = "386216422.169964"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "107"
+         endingLineNumber = "107"
          landmarkName = "@implementation SettingsScreen"
          landmarkType = "3">
       </FileBreakpoint>

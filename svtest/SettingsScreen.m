@@ -1,11 +1,3 @@
-//
-//  SettingsScreen.m
-//  svtest
-//
-//  Created by adam on 3/6/13.
-//  Copyright (c) 2013 adam. All rights reserved.
-//
-
 #import "SettingsScreen.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -15,11 +7,14 @@
 
 @implementation SettingsScreen
 
+// Synthesize all outlets
 @synthesize sliderLabel;
 @synthesize speedSlidePos;
 @synthesize reset;
 
+// Initialize the speed to 1.5
 float savedSpeed = 1.5;
+
 UISlider *slider;
 
 -(IBAction)speedSlider:(id)sender {
@@ -29,6 +24,7 @@ UISlider *slider;
     savedSpeed = [[NSUserDefaults standardUserDefaults] floatForKey:@"savedSpeed"];
     slider.value = savedSpeed;
     
+    // Set the slider label text to show the savedSpeed variable
     NSString *newLabel = [[NSString alloc]initWithFormat:@"%.02f", savedSpeed];
     sliderLabel.text = newLabel;
     
@@ -38,6 +34,7 @@ UISlider *slider;
     return savedSpeed;
 }
 
+// Method for resetting the slider back to 1.5
 -(IBAction)resetSettings:(id)sender {
     
     savedSpeed = 1.5;
@@ -63,18 +60,17 @@ UISlider *slider;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Initialize the view of the slider
     NSString *newLabel = [[NSString alloc]initWithFormat:@"%.02f", savedSpeed];
     sliderLabel.text = newLabel;
     
     speedSlidePos.value = savedSpeed;
     
+    // Set the gradient on the reset button
     NSArray *buttons = [NSArray arrayWithObjects: self.reset, nil];
     
     for(UIButton *btn in buttons)
     {
-        
-        // BEGIN WORKING FROM TUTORIAL HERE
-        
         // Set the button Text Color
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor cyanColor] forState:UIControlStateHighlighted];

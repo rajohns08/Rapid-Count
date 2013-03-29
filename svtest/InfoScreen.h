@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoScreen : UIViewController {
+    
+    // Add a scrolling outlet to the info screen
     UIScrollView *infoScroll;
 }
 

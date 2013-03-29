@@ -30,8 +30,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Set up the scroll attributes
     [infoScroll setScrollEnabled:YES];
     [infoScroll setContentSize:CGSizeMake(320, 10000)];
+    
+    // This was the attribute that actually allowed scroll to work magically
     [infoScroll setAlwaysBounceVertical:YES];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackGradient.png"]];

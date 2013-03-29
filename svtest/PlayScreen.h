@@ -12,7 +12,7 @@
     // outlet needed for cards to show
     UIImageView *viewCard;
     
-    // outlet for the nstimer used to call a new card ever x seconds
+    // outlet for the nstimer used to call a new card every x seconds
     NSTimer *displayImageTimer;
     
     // countdown label to show something before cards start 
