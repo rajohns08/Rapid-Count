@@ -155,7 +155,7 @@ int cardCount = 0;
     numOfCards = 0;
     
     // remove the last card from view
-    [self.viewCard removeFromSuperview];
+    //[self.viewCard removeFromSuperview];  commented out to protect against count being updated without card being shown
     
     // clear any text
     countdown.text = nil;
@@ -164,6 +164,8 @@ int cardCount = 0;
 
 // method for displaying an alert box for showing the user the count
 -(IBAction)showCount:(id)sender {
+    
+    [self cancelTimer:nil];
     
     // create the message to be shown to the user
     NSString* cardCountStr = [NSString stringWithFormat:@"%i", cardCount];
@@ -185,6 +187,8 @@ int cardCount = 0;
 // method called when user presses start. it shows text on the screen
 -(IBAction)startCountdown:(id)sender {
     
+    // remove card that was previously shown (if there was one) when user hits start
+    [self.viewCard removeFromSuperview];
     countdown.text = @"Get Ready";
 }
 
@@ -193,6 +197,7 @@ int cardCount = 0;
     
     // first cancel the timer and reset everything
     [self cancelTimer:nil];
+    cardCount = 0;
     
     // next call the segue for swapping screens back to the home screen. normally segues attached to
     // buttons don't perform any user defined action, so since I needed cancelTimer to be called, I
