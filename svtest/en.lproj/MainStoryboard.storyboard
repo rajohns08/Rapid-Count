@@ -1,422 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fjw-yI-RYb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CWD-2i-ANd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Play Screen-->
-        <scene sceneID="5">
+        <!--View Controller - Info-->
+        <scene sceneID="dWa-kg-Uod">
             <objects>
-                <viewController id="2" customClass="PlayScreen" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                <viewController id="SFV-pO-4dd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5yC-6w-tI0">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="EZr-T5-lFD">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="6PD-LH-SYR"/>
-                                    <constraint firstAttribute="width" constant="240" id="mAw-xj-4if"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="221" translatesAutoresizingMaskIntoConstraints="NO" id="73W-GR-mY0">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="148" id="1Kt-Pa-MGp"/>
-                                    <constraint firstAttribute="width" constant="221" id="xm8-D9-cWK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="4" height="4"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-br-HBB">
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Bm5-cX-Oec"/>
-                                    <barButtonItem title="Home" id="gS0-5w-khY">
-                                        <connections>
-                                            <action selector="goToHomeScreen:" destination="2" id="7bv-pc-vNF"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JRI-WJ-8Jg"/>
-                                    <barButtonItem title="Show Count" id="l37-Qe-0jE">
-                                        <connections>
-                                            <action selector="showCount:" destination="2" id="hfX-Ae-pI3"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="CBh-Ua-xaz"/>
-                                    <barButtonItem title="Stop" id="qh9-xb-YwG">
-                                        <connections>
-                                            <action selector="cancelTimer:" destination="2" id="EC8-FR-DL3"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hEg-Px-eJ4"/>
-                                    <barButtonItem title="Start" width="84" style="done" id="1ci-RN-f2x">
-                                        <connections>
-                                            <action selector="callTimer:" destination="2" id="9fY-QS-fKl"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yYz-xL-awl"/>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96148090289999999" green="0.96251195789999999" blue="0.92952059620000005" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="EZr-T5-lFD" secondAttribute="bottom" constant="136" id="8h7-hx-ffB"/>
-                            <constraint firstItem="73W-GR-mY0" firstAttribute="centerX" secondItem="EZr-T5-lFD" secondAttribute="centerX" type="default" id="A6Z-jN-0R3"/>
-                            <constraint firstItem="Jgl-br-HBB" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="BYC-ru-fgn"/>
-                            <constraint firstItem="73W-GR-mY0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="116" id="Vh0-Ts-mts"/>
-                            <constraint firstItem="Jgl-br-HBB" firstAttribute="centerX" secondItem="EZr-T5-lFD" secondAttribute="centerX" type="default" id="cS9-fx-duH"/>
-                            <constraint firstItem="Jgl-br-HBB" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="mSX-XO-bav"/>
-                            <constraint firstItem="Jgl-br-HBB" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="uF1-xW-lzL"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="h6L-gC-C0h"/>
-                    <connections>
-                        <outlet property="countdown" destination="73W-GR-mY0" id="iar-pL-fli"/>
-                        <outlet property="home" destination="gS0-5w-khY" id="ciD-YU-rWC"/>
-                        <outlet property="showCount" destination="l37-Qe-0jE" id="F7a-As-RHZ"/>
-                        <outlet property="start" destination="1ci-RN-f2x" id="ft1-nd-ile"/>
-                        <outlet property="stop" destination="qh9-xb-YwG" id="7aO-Ne-gGx"/>
-                        <outlet property="viewCard" destination="EZr-T5-lFD" id="tbC-m6-77t"/>
-                        <segue destination="fjw-yI-RYb" kind="modal" identifier="playToHome" id="5e8-qj-mNv"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Info" image="info.png" id="le0-j4-zes"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZC-8B-Hp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="-143"/>
+            <point key="canvasLocation" x="-647" y="-273"/>
         </scene>
-        <!--Info Screen-->
-        <scene sceneID="Cv7-YA-gts">
+        <!--View Controller - Count-->
+        <scene sceneID="TdE-CP-AsU">
             <objects>
-                <viewController id="f9C-lz-sJA" customClass="InfoScreen" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xY7-f4-mr4">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                <viewController id="IJF-AS-X0m" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DGV-30-71P">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="xnU-kQ-xe0">
-                                <items>
-                                    <barButtonItem title="Home" id="s1e-Jk-kNJ">
-                                        <connections>
-                                            <segue destination="fjw-yI-RYb" kind="modal" id="IHk-EL-5cr"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUT-ZN-Hm0">
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7Ae-3b-hFw">
-                                        <string key="text">This app has been designed to help card counters practice counting down decks. It is not meant to simulate an entire blackjack playing experience. The app helps you practice the core technique of card counting, which is quickly associating a card with a number.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="yDh-yz-p4S">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="190" id="UEE-IY-mFX"/>
-                                        </constraints>
-                                        <string key="text">Start the count at 0. Each time you see a +1 valued card, add 1 to the count. Each time you see a -1 valued card, subtract 1 from the count. Do this until the deck of 52 random cards has completed. Note that this deck is randomly generated so the count does not have to equal 0 at the end like a physical deck.</string>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="RMQ-ag-tZZ">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="86" id="Cyp-YA-LDY"/>
-                                        </constraints>
-                                        <string key="text">In the Hi-Lo card counting strategy, cards 2-6 are given a value of +1, cards 7-9 are given a value of 0, and cards 10-A are given a value of -1.
-</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="RMQ-ag-tZZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0cv-0v-luE"/>
-                                    <constraint firstAttribute="bottom" secondItem="yDh-yz-p4S" secondAttribute="bottom" constant="26" id="5R9-mM-bJk"/>
-                                    <constraint firstItem="RMQ-ag-tZZ" firstAttribute="leading" secondItem="JUT-ZN-Hm0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5k0-uA-p7q"/>
-                                    <constraint firstItem="yDh-yz-p4S" firstAttribute="top" secondItem="RMQ-ag-tZZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AiS-EV-q7M"/>
-                                    <constraint firstItem="7Ae-3b-hFw" firstAttribute="top" secondItem="JUT-ZN-Hm0" secondAttribute="top" constant="18" id="GtI-go-J4s"/>
-                                    <constraint firstAttribute="trailing" secondItem="yDh-yz-p4S" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VZO-k0-zCG"/>
-                                    <constraint firstItem="7Ae-3b-hFw" firstAttribute="leading" secondItem="JUT-ZN-Hm0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WYI-M2-bgu"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Ae-3b-hFw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Yz8-pU-d7U"/>
-                                    <constraint firstItem="RMQ-ag-tZZ" firstAttribute="top" secondItem="7Ae-3b-hFw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="b6G-T7-vGf"/>
-                                    <constraint firstItem="yDh-yz-p4S" firstAttribute="leading" secondItem="JUT-ZN-Hm0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hJS-XT-Lw1"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96148090289999999" green="0.96251195789999999" blue="0.92952059620000005" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="xnU-kQ-xe0" firstAttribute="top" secondItem="JUT-ZN-Hm0" secondAttribute="bottom" type="default" id="0lG-TH-6Uf"/>
-                            <constraint firstItem="JUT-ZN-Hm0" firstAttribute="top" secondItem="xY7-f4-mr4" secondAttribute="top" type="default" id="2Cn-BL-ZrE"/>
-                            <constraint firstItem="xnU-kQ-xe0" firstAttribute="bottom" secondItem="xY7-f4-mr4" secondAttribute="bottom" type="default" id="Seh-ey-pqd"/>
-                            <constraint firstItem="xnU-kQ-xe0" firstAttribute="leading" secondItem="xY7-f4-mr4" secondAttribute="leading" type="default" id="Szk-WK-vUh"/>
-                            <constraint firstItem="xnU-kQ-xe0" firstAttribute="trailing" secondItem="xY7-f4-mr4" secondAttribute="trailing" type="default" id="YuD-dv-XEh"/>
-                            <constraint firstItem="JUT-ZN-Hm0" firstAttribute="trailing" secondItem="xY7-f4-mr4" secondAttribute="trailing" type="default" id="fGI-hZ-Xrd"/>
-                            <constraint firstItem="JUT-ZN-Hm0" firstAttribute="leading" secondItem="xY7-f4-mr4" secondAttribute="leading" type="default" id="uY3-Dt-SwX"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="infoScroll" destination="JUT-ZN-Hm0" id="YE1-Vg-qVp"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Count" image="poker.png" id="8ce-jZ-BZZ"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NxS-cX-dbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sP-Ho-foo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410" y="525"/>
+            <point key="canvasLocation" x="-647" y="-925"/>
         </scene>
-        <!--Settings Screen-->
-        <scene sceneID="EIj-1G-Ln9">
+        <!--Tab Bar Controller-->
+        <scene sceneID="C6x-tU-03n">
             <objects>
-                <viewController id="kWZ-wb-JkU" customClass="SettingsScreen" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Vru-oQ-Olj">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="PxF-yz-lV2">
-                                <items>
-                                    <barButtonItem title="Home" id="jTN-7p-xBy">
-                                        <connections>
-                                            <segue destination="fjw-yI-RYb" kind="modal" id="e0Q-M9-cyI"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time interval between cards" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="0tY-oi-V8W">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="wgg-gy-Mmj">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="03y-Ye-vMs"/>
-                                </constraints>
-                                <color key="minimumTrackTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="speedSlider:" destination="kWZ-wb-JkU" eventType="valueChanged" id="bnc-W9-Jad"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM5-yo-de6">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="J0G-Ap-EaH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="(in seconds)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="117" translatesAutoresizingMaskIntoConstraints="NO" id="OYK-0h-mf7">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Dd0-fm-S8G"/>
-                                    <constraint firstAttribute="width" constant="117" id="DnL-6z-et2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgJ-4A-iui">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="137" id="D3a-Ak-M5Y"/>
-                                    <constraint firstAttribute="height" constant="44" id="dR6-ek-kFE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="24"/>
-                                <state key="normal" title="Reset">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="resetSettings:" destination="kWZ-wb-JkU" eventType="touchUpInside" id="l40-8R-oyf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96148090289999999" green="0.96251195789999999" blue="0.92952059620000005" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="OYK-0h-mf7" firstAttribute="top" secondItem="0tY-oi-V8W" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0kG-Vw-SYX"/>
-                            <constraint firstItem="fM5-yo-de6" firstAttribute="centerX" secondItem="OYK-0h-mf7" secondAttribute="centerX" type="default" id="7zL-br-5Om"/>
-                            <constraint firstItem="qgJ-4A-iui" firstAttribute="centerY" secondItem="Vru-oQ-Olj" secondAttribute="centerY" type="default" id="F4c-C0-2sJ"/>
-                            <constraint firstItem="0tY-oi-V8W" firstAttribute="leading" secondItem="Vru-oQ-Olj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="JW3-w7-4QZ"/>
-                            <constraint firstItem="0tY-oi-V8W" firstAttribute="top" secondItem="Vru-oQ-Olj" secondAttribute="top" constant="20" symbolic="YES" type="default" id="NF3-ZT-QAu"/>
-                            <constraint firstItem="qgJ-4A-iui" firstAttribute="centerX" secondItem="wgg-gy-Mmj" secondAttribute="centerX" type="default" id="PP9-TZ-Sv1"/>
-                            <constraint firstItem="PxF-yz-lV2" firstAttribute="trailing" secondItem="Vru-oQ-Olj" secondAttribute="trailing" type="default" id="Vbh-Qg-hem"/>
-                            <constraint firstItem="wgg-gy-Mmj" firstAttribute="top" secondItem="fM5-yo-de6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ce3-DT-h4b"/>
-                            <constraint firstItem="wgg-gy-Mmj" firstAttribute="centerX" secondItem="fM5-yo-de6" secondAttribute="centerX" type="default" id="eYo-QA-SfP"/>
-                            <constraint firstAttribute="trailing" secondItem="0tY-oi-V8W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="exc-jA-x7a"/>
-                            <constraint firstItem="PxF-yz-lV2" firstAttribute="leading" secondItem="Vru-oQ-Olj" secondAttribute="leading" type="default" id="hph-18-cl3"/>
-                            <constraint firstItem="OYK-0h-mf7" firstAttribute="centerX" secondItem="0tY-oi-V8W" secondAttribute="centerX" type="default" id="imj-U7-O1J"/>
-                            <constraint firstItem="PxF-yz-lV2" firstAttribute="bottom" secondItem="Vru-oQ-Olj" secondAttribute="bottom" type="default" id="pXd-fO-Z6s"/>
-                            <constraint firstItem="fM5-yo-de6" firstAttribute="top" secondItem="OYK-0h-mf7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rWo-XW-EQ2"/>
-                        </constraints>
-                    </view>
+                <tabBarController definesPresentationContext="YES" id="CWD-2i-ANd" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="FDx-dq-wEc">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
                     <connections>
-                        <outlet property="reset" destination="qgJ-4A-iui" id="e2z-l4-LaI"/>
-                        <outlet property="sliderLabel" destination="fM5-yo-de6" id="rPd-g2-ce0"/>
-                        <outlet property="speedSlidePos" destination="wgg-gy-Mmj" id="jtD-O8-5C5"/>
+                        <segue destination="IJF-AS-X0m" kind="relationship" relationship="viewControllers" id="q1S-7X-Uv2"/>
+                        <segue destination="SFV-pO-4dd" kind="relationship" relationship="viewControllers" id="8lG-YC-ixA"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ir4-A9-6B3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVS-ZH-7mC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="525"/>
-        </scene>
-        <!--Home Screen-->
-        <scene sceneID="5dQ-GF-XrV">
-            <objects>
-                <viewController id="fjw-yI-RYb" customClass="HomeScreen" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Opj-H8-ip9">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kc-sA-scU">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="nZc-hL-gAq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="24"/>
-                                <state key="normal" title="Start Counting">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2" kind="modal" id="q3o-PU-d6j"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKk-2F-FyJ">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="pnn-Qe-d9d"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="24"/>
-                                <state key="normal" title="How To Count">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="f9C-lz-sJA" kind="modal" id="kY9-X2-FDl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thq-1T-Hre">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Hjv-uI-Cj2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="24"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="kWZ-wb-JkU" kind="modal" id="iSE-W0-ovD"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="suitstrans4.png" translatesAutoresizingMaskIntoConstraints="NO" id="BvB-fE-Ezy">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="kN3-x6-GqZ"/>
-                                    <constraint firstAttribute="height" constant="128" id="lNh-1S-Kfx"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="rapidCountTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="PaK-gY-j5r">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="258" id="j0B-Ui-Alb"/>
-                                    <constraint firstAttribute="width" constant="474" id="x8a-qa-WGd"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96148090288267418" green="0.96251195790816324" blue="0.92952059617604299" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="thq-1T-Hre" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="HIR-kL-o5c"/>
-                            <constraint firstAttribute="trailing" secondItem="0kc-sA-scU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="INm-LY-aFU"/>
-                            <constraint firstItem="PaK-gY-j5r" firstAttribute="top" secondItem="Opj-H8-ip9" secondAttribute="top" constant="158" id="Rak-5p-qca"/>
-                            <constraint firstItem="PaK-gY-j5r" firstAttribute="leading" secondItem="Opj-H8-ip9" secondAttribute="leading" constant="-28" id="Vo3-Pb-opE"/>
-                            <constraint firstItem="thq-1T-Hre" firstAttribute="top" secondItem="BKk-2F-FyJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Xzd-aM-JeV"/>
-                            <constraint firstItem="0kc-sA-scU" firstAttribute="leading" secondItem="Opj-H8-ip9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aPs-KS-toI"/>
-                            <constraint firstAttribute="trailing" secondItem="BKk-2F-FyJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="b5S-qm-dJ7"/>
-                            <constraint firstItem="BKk-2F-FyJ" firstAttribute="top" secondItem="0kc-sA-scU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cgb-Qi-v0t"/>
-                            <constraint firstAttribute="bottom" secondItem="thq-1T-Hre" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="k5N-sU-Ym4"/>
-                            <constraint firstItem="0kc-sA-scU" firstAttribute="centerX" secondItem="BvB-fE-Ezy" secondAttribute="centerX" type="default" id="o00-ug-OOc"/>
-                            <constraint firstItem="thq-1T-Hre" firstAttribute="leading" secondItem="Opj-H8-ip9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rYL-Xs-WOw"/>
-                            <constraint firstItem="BKk-2F-FyJ" firstAttribute="leading" secondItem="Opj-H8-ip9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ujf-qm-dla"/>
-                            <constraint firstItem="BvB-fE-Ezy" firstAttribute="top" secondItem="Opj-H8-ip9" secondAttribute="top" constant="75" id="yFz-H6-lMy"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Mz7-fI-vvl"/>
-                    <connections>
-                        <outlet property="howToCount" destination="BKk-2F-FyJ" id="UFb-ck-smu"/>
-                        <outlet property="settings" destination="thq-1T-Hre" id="yJg-3Y-V1d"/>
-                        <outlet property="startCounting" destination="0kc-sA-scU" id="QHI-gv-wh2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tCw-2B-5pi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-410" y="-143"/>
+            <point key="canvasLocation" x="-1181" y="-599"/>
         </scene>
     </scenes>
     <resources>
-        <image name="rapidCountTitle.png" width="640" height="400"/>
-        <image name="suitstrans4.png" width="300" height="300"/>
+        <image name="info.png" width="30" height="30"/>
+        <image name="poker.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="HomeScreen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeScreen.h"/>
-            <relationships>
-                <relationship kind="outlet" name="countLogo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="howToCount" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rapidLogo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="settings" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="startCounting" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="InfoScreen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoScreen.h"/>
-            <relationships>
-                <relationship kind="outlet" name="infoScroll" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NSTimer" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSTimer.h"/>
-        </class>
-        <class className="PlayScreen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayScreen.h"/>
-            <relationships>
-                <relationship kind="action" name="callTimer:"/>
-                <relationship kind="action" name="cancelTimer:"/>
-                <relationship kind="action" name="click:"/>
-                <relationship kind="action" name="goToHomeScreen:"/>
-                <relationship kind="action" name="showCount:"/>
-                <relationship kind="action" name="startCountdown:"/>
-                <relationship kind="outlet" name="countdown" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="displayImageTimer" candidateClass="NSTimer"/>
-                <relationship kind="outlet" name="home" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="showCount" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="start" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="viewCard" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SettingsScreen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsScreen.h"/>
-            <relationships>
-                <relationship kind="action" name="resetSettings:"/>
-                <relationship kind="action" name="speedSlider:"/>
-                <relationship kind="outlet" name="reset" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sliderLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="speedSlidePos" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="e0Q-M9-cyI"/>
-    </inferredMetricsTieBreakers>
 </document>
