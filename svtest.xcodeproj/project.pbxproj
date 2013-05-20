@@ -10,6 +10,7 @@
 		660A3DAF16E724AF00469EE8 /* HomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 660A3DAE16E724AF00469EE8 /* HomeScreen.m */; };
 		660A3DB216E724ED00469EE8 /* InfoScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 660A3DB116E724ED00469EE8 /* InfoScreen.m */; };
 		660A3DB516E72D3500469EE8 /* SettingsScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 660A3DB416E72D3500469EE8 /* SettingsScreen.m */; };
+		66820DDA1749A4B10079A33E /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 66820DD91749A4B10079A33E /* clock.png */; };
 		669024D116E889BE009C4B19 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669024D016E889BE009C4B19 /* QuartzCore.framework */; };
 		66E328BC16E9C74500E54B55 /* blackGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 66E328BB16E9C74500E54B55 /* blackGradient.png */; };
 		66E328C016E9D2D300E54B55 /* table.png in Resources */ = {isa = PBXBuildFile; fileRef = 66E328BF16E9D2D300E54B55 /* table.png */; };
@@ -106,6 +107,7 @@
 		660A3DB116E724ED00469EE8 /* InfoScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoScreen.m; sourceTree = "<group>"; };
 		660A3DB316E72D3500469EE8 /* SettingsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsScreen.h; sourceTree = "<group>"; };
 		660A3DB416E72D3500469EE8 /* SettingsScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsScreen.m; sourceTree = "<group>"; };
+		66820DD91749A4B10079A33E /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		669024D016E889BE009C4B19 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		66E328BB16E9C74500E54B55 /* blackGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackGradient.png; path = ../blackGradient.png; sourceTree = "<group>"; };
 		66E328BF16E9D2D300E54B55 /* table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = table.png; path = ../table.png; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 		66F4488817434D7800A4EA85 /* tab bar icons */ = {
 			isa = PBXGroup;
 			children = (
+				66820DD91749A4B10079A33E /* clock.png */,
 				66F4488B17434FB700A4EA85 /* info.png */,
 				66F4488917434E4200A4EA85 /* poker.png */,
 			);
@@ -512,6 +515,7 @@
 				66FF10EB16EDC95800D01DBB /* Default-568h@2x.png in Resources */,
 				66F4488A17434E4200A4EA85 /* poker.png in Resources */,
 				66F4488C17434FB700A4EA85 /* info.png in Resources */,
+				66820DDA1749A4B10079A33E /* clock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
