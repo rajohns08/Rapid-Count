@@ -252,8 +252,6 @@
 		66ED176716D6F3E2005BEC93 /* svtest */ = {
 			isa = PBXGroup;
 			children = (
-				66ED177016D6F3E2005BEC93 /* AppDelegate.h */,
-				66ED177116D6F3E2005BEC93 /* AppDelegate.m */,
 				66ED177916D6F3E2005BEC93 /* MainStoryboard.storyboard */,
 				660A3DAD16E724AF00469EE8 /* HomeScreen.h */,
 				660A3DAE16E724AF00469EE8 /* HomeScreen.m */,
@@ -271,6 +269,8 @@
 		66ED176816D6F3E2005BEC93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				66ED177016D6F3E2005BEC93 /* AppDelegate.h */,
+				66ED177116D6F3E2005BEC93 /* AppDelegate.m */,
 				66F4488817434D7800A4EA85 /* tab bar icons */,
 				66EED38F16DA34FC006DB082 /* cards */,
 				66FF10E416EDB99200D01DBB /* icon57.png */,

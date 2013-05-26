@@ -60,13 +60,15 @@ UISlider *slider;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackGradient.png"]];
+    
     // Initialize the view of the slider
     NSString *newLabel = [[NSString alloc]initWithFormat:@"%.02f", savedSpeed];
     sliderLabel.text = newLabel;
     
     speedSlidePos.value = savedSpeed;
     
-    // Set the gradient on the reset button
+    // Set the gradient on the reset button (make sure it is a custom button in storyboard)
     NSArray *buttons = [NSArray arrayWithObjects: self.reset, nil];
     
     for(UIButton *btn in buttons)
@@ -98,8 +100,6 @@ UISlider *slider;
         // Apply a 1 pixel, black border around Buy Button
         [btnLayer setBorderWidth:1.0f];
         [btnLayer setBorderColor:[[UIColor blackColor] CGColor]];
-        
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackGradient.png"]];
         
     }
     

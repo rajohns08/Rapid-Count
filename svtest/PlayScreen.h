@@ -17,23 +17,14 @@
     
     // countdown label to show something before cards start 
     UILabel *countdown;
-    
-    // bar button item outlets created so their size can be adjustable
-    // these are the buttons displayed on the bottom toolbar of the play screen
-    UIBarButtonItem *home;
-    UIBarButtonItem *showCount;
-    UIBarButtonItem *stop;
-    UIBarButtonItem *start;
 }
 
 // properties for all outlets
 @property(nonatomic, retain) IBOutlet UIImageView *viewCard;
 @property(nonatomic, retain) IBOutlet NSTimer *displayImageTimer;
 @property(nonatomic, retain) IBOutlet UILabel *countdown;
-@property(nonatomic, retain) IBOutlet UIBarButtonItem *home;
-@property(nonatomic, retain) IBOutlet UIBarButtonItem *showCount;
-@property(nonatomic, retain) IBOutlet UIBarButtonItem *stop;
-@property(nonatomic, retain) IBOutlet UIBarButtonItem *start;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
 
 // method called by nstimer every x seconds. hanldes displaying the cards
 -(IBAction)click:(id)sender;

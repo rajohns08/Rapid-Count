@@ -23,10 +23,6 @@
 @synthesize viewCard;
 @synthesize countdown;
 @synthesize displayImageTimer;
-@synthesize home;
-@synthesize showCount;
-@synthesize stop;
-@synthesize start;
 
 // global variable for determining if nstimer is currently actively displaying new cards
 bool timerStarted = false;
@@ -41,6 +37,53 @@ int previousNum = -1;
 
 // global variable for keeping up with the card count
 int cardCount = 0;
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.stopButton.hidden = YES;
+    
+    // set the background image
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"table.png"]];
+    
+    // Set the gradient on the start button (make sure it is a custom button in storyboard)
+    NSArray *buttons = [NSArray arrayWithObjects: self.startButton, self.stopButton, nil];
+    
+    for(UIButton *btn in buttons)
+    {
+        // Set the button Text Color
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor cyanColor] forState:UIControlStateHighlighted];
+        
+        // Set default backgrond color
+        [btn setBackgroundColor:[UIColor blackColor]];
+        
+        // Add Custom Font
+        [[btn titleLabel] setFont:[UIFont fontWithName:@"Arial" size:20.0f]];
+        
+        // Draw a custom gradient
+        CAGradientLayer *btnGradient = [CAGradientLayer layer];
+        btnGradient.frame = btn.bounds;
+        btnGradient.colors = [NSArray arrayWithObjects:
+                              (id)[[UIColor colorWithRed:102.0f / 255.0f green:102.0f / 255.0f blue:102.0f / 255.0f alpha:1.0f] CGColor],
+                              (id)[[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f] CGColor],
+                              nil];
+        [btn.layer insertSublayer:btnGradient atIndex:0];
+        
+        // Round button corners
+        CALayer *btnLayer = [btn layer];
+        [btnLayer setMasksToBounds:YES];
+        [btnLayer setCornerRadius:5.0f];
+        
+        // Apply a 1 pixel, black border around Buy Button
+        [btnLayer setBorderWidth:1.0f];
+        [btnLayer setBorderColor:[[UIColor blackColor] CGColor]];
+        
+    }
+    
+}
 
 // method for displaying the cards randomly to the user
 -(IBAction)click:(id)sender {
@@ -73,7 +116,7 @@ int cardCount = 0;
     [self.viewCard removeFromSuperview];
     
     // make a new space for the new card
-    viewCard = [[UIImageView alloc]initWithFrame:CGRectMake(34, 27, 250, 350)];
+    viewCard = [[UIImageView alloc]initWithFrame:CGRectMake(34, 0, 250, 350)];
     
     // an array of all the card name files
     NSArray *cardNames = [NSArray arrayWithObjects:
@@ -167,6 +210,9 @@ int cardCount = 0;
     
     [self cancelTimer:nil];
     
+    self.startButton.hidden = NO;
+    self.stopButton.hidden = YES;
+    
     // create the message to be shown to the user
     NSString* cardCountStr = [NSString stringWithFormat:@"%i", cardCount];
     NSString* message = [NSString stringWithFormat:@"+%@", cardCountStr];
@@ -190,6 +236,8 @@ int cardCount = 0;
     // remove card that was previously shown (if there was one) when user hits start
     [self.viewCard removeFromSuperview];
     countdown.text = @"Get Ready";
+    self.startButton.hidden = YES;
+    self.stopButton.hidden = NO;
 }
 
 // method called when user presses home button
@@ -206,24 +254,6 @@ int cardCount = 0;
     [self performSegueWithIdentifier:@"playToHome" sender:self];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    // set the background image
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"table.png"]];
-    
-    // set the button attributes on the bottom toolbar
-    [home setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:12], UITextAttributeFont,nil] forState:UIControlStateNormal];
-    
-    [showCount setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:12], UITextAttributeFont,nil] forState:UIControlStateNormal];
-
-    [stop setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:12], UITextAttributeFont,nil] forState:UIControlStateNormal];
-    
-    [start setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:12], UITextAttributeFont,nil] forState:UIControlStateNormal];
-    
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
