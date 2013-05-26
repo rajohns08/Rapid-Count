@@ -21,13 +21,12 @@
 
 // properties for all outlets
 @property(nonatomic, retain) IBOutlet UIImageView *viewCard;
-@property(nonatomic, retain) IBOutlet NSTimer *displayImageTimer;
 @property(nonatomic, retain) IBOutlet UILabel *countdown;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 
-// method called by nstimer every x seconds. hanldes displaying the cards
--(IBAction)click:(id)sender;
+// method called by nstimer every x seconds. handles displaying the cards
+-(void)click:(id)sender;
 
 // this function is called by the start button, to only call the timer if the
 // timer is not already started
@@ -35,7 +34,7 @@
 
 // this function is called by the stop button, as well as when the cards are finished displaying,
 // and it is also called when hitting the home button from the play screen.
--(IBAction)cancelTimer:(id)sender;
+-(void)cancelTimer:(id)sender;
 
 // this function is called by the show count button to display the count at any moment
 -(IBAction)showCount:(id)sender;
@@ -44,7 +43,7 @@
 // to show something before the cards start
 -(IBAction)startCountdown:(id)sender;
 
-// calls cancelTimer and then performs screen swapping segue
--(IBAction)goToHomeScreen:(id)sender;
+// checks to see if device is a 4 inch screen
+-(BOOL)is4InchScreen;
 
 @end

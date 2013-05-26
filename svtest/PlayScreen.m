@@ -22,7 +22,6 @@
 // sythesize all properties
 @synthesize viewCard;
 @synthesize countdown;
-@synthesize displayImageTimer;
 
 // global variable for determining if nstimer is currently actively displaying new cards
 bool timerStarted = false;
@@ -86,7 +85,7 @@ int cardCount = 0;
 }
 
 // method for displaying the cards randomly to the user
--(IBAction)click:(id)sender {
+-(void)click:(id)sender {
 
     // erase any text that might be shown behind the cards
     countdown.text = nil;
@@ -116,7 +115,12 @@ int cardCount = 0;
     [self.viewCard removeFromSuperview];
     
     // make a new space for the new card
-    viewCard = [[UIImageView alloc]initWithFrame:CGRectMake(34, 0, 250, 350)];
+    if ([self is4InchScreen]) {
+        viewCard = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 300, 420)];
+    }
+    else {
+        viewCard = [[UIImageView alloc]initWithFrame:CGRectMake(34, 0, 250, 350)];
+    }
     
     // an array of all the card name files
     NSArray *cardNames = [NSArray arrayWithObjects:
@@ -170,12 +174,10 @@ int cardCount = 0;
         
         NSDate *d = [NSDate dateWithTimeIntervalSinceNow: 3];
         
-        self.displayImageTimer = [[NSTimer alloc]initWithFireDate:d interval:timerInterval target:self selector:@selector(click:) userInfo:nil repeats:YES];
+        self->displayImageTimer = [[NSTimer alloc]initWithFireDate:d interval:timerInterval target:self selector:@selector(click:) userInfo:nil repeats:YES];
         
         NSRunLoop *runner = [NSRunLoop currentRunLoop];
         [runner addTimer:displayImageTimer forMode: NSDefaultRunLoopMode];
-        
-//        self.displayImageTimer = [NSTimer scheduledTimerWithTimeInterval:timerInterval target:self selector:@selector(click:) userInfo:nil repeats:YES];
         
         cardCount = 0;
         
@@ -187,7 +189,7 @@ int cardCount = 0;
 }
 
 // method for ending the nstimer either by user hitting stop, the cards finishing, or user hitting home
--(IBAction)cancelTimer:(id)sender {
+-(void)cancelTimer:(id)sender {
     
     // stop the timer
     [displayImageTimer invalidate];
@@ -196,9 +198,6 @@ int cardCount = 0;
     // reset variables
     timerStarted = false;
     numOfCards = 0;
-    
-    // remove the last card from view
-    //[self.viewCard removeFromSuperview];  commented out to protect against count being updated without card being shown
     
     // clear any text
     countdown.text = nil;
@@ -240,18 +239,8 @@ int cardCount = 0;
     self.stopButton.hidden = NO;
 }
 
-// method called when user presses home button
--(IBAction)goToHomeScreen:(id)sender {
-    
-    // first cancel the timer and reset everything
-    [self cancelTimer:nil];
-    cardCount = 0;
-    
-    // next call the segue for swapping screens back to the home screen. normally segues attached to
-    // buttons don't perform any user defined action, so since I needed cancelTimer to be called, I
-    // had to create a segue from one viewcontroller to the other instead of from a button. This allowed
-    // me to create an identifier for the segue and call it here after cancelTimer has been called.
-    [self performSegueWithIdentifier:@"playToHome" sender:self];
+- (BOOL)is4InchScreen {
+    return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.0);
 }
 
 - (void)didReceiveMemoryWarning

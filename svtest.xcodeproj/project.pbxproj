@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		660A3DAF16E724AF00469EE8 /* HomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 660A3DAE16E724AF00469EE8 /* HomeScreen.m */; };
 		660A3DB216E724ED00469EE8 /* InfoScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 660A3DB116E724ED00469EE8 /* InfoScreen.m */; };
 		660A3DB516E72D3500469EE8 /* SettingsScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 660A3DB416E72D3500469EE8 /* SettingsScreen.m */; };
 		66820DDA1749A4B10079A33E /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 66820DD91749A4B10079A33E /* clock.png */; };
@@ -101,8 +100,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		660A3DAD16E724AF00469EE8 /* HomeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreen.h; sourceTree = "<group>"; };
-		660A3DAE16E724AF00469EE8 /* HomeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreen.m; sourceTree = "<group>"; };
 		660A3DB016E724ED00469EE8 /* InfoScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoScreen.h; sourceTree = "<group>"; };
 		660A3DB116E724ED00469EE8 /* InfoScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoScreen.m; sourceTree = "<group>"; };
 		660A3DB316E72D3500469EE8 /* SettingsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsScreen.h; sourceTree = "<group>"; };
@@ -253,8 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				66ED177916D6F3E2005BEC93 /* MainStoryboard.storyboard */,
-				660A3DAD16E724AF00469EE8 /* HomeScreen.h */,
-				660A3DAE16E724AF00469EE8 /* HomeScreen.m */,
 				66ED177C16D6F3E2005BEC93 /* PlayScreen.h */,
 				66ED177D16D6F3E2005BEC93 /* PlayScreen.m */,
 				660A3DB316E72D3500469EE8 /* SettingsScreen.h */,
@@ -553,7 +548,6 @@
 				66ED176E16D6F3E2005BEC93 /* main.m in Sources */,
 				66ED177216D6F3E2005BEC93 /* AppDelegate.m in Sources */,
 				66ED177E16D6F3E2005BEC93 /* PlayScreen.m in Sources */,
-				660A3DAF16E724AF00469EE8 /* HomeScreen.m in Sources */,
 				660A3DB216E724ED00469EE8 /* InfoScreen.m in Sources */,
 				660A3DB516E72D3500469EE8 /* SettingsScreen.m in Sources */,
 			);
