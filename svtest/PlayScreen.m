@@ -42,6 +42,7 @@ int cardCount = 0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // initially hide the stop button (it is on top of the start button)
     self.stopButton.hidden = YES;
     
     self.countdown.textColor = [UIColor cyanColor];
@@ -49,7 +50,7 @@ int cardCount = 0;
     // set the background image
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"table.png"]];
     
-    // Set the gradient on the start button (make sure it is a custom button in storyboard)
+    // Set the gradient on the start and stop buttons (make sure it is a custom button in storyboard)
     NSArray *buttons = [NSArray arrayWithObjects: self.startButton, self.stopButton, nil];
     
     for(UIButton *btn in buttons)
@@ -156,7 +157,7 @@ int cardCount = 0;
     numOfCards++;
     
     // once a full deck has been simulated, cancel the nstimer so this function is called no more
-    if (numOfCards > 1) {
+    if (numOfCards > 51) {
         [self cancelTimer:nil];
         
         // animate the finished message after 52 cards
@@ -216,6 +217,7 @@ int cardCount = 0;
     
     [self cancelTimer:nil];
     
+    // now show the start button again
     self.startButton.hidden = NO;
     self.stopButton.hidden = YES;
     
@@ -242,6 +244,8 @@ int cardCount = 0;
     // remove card that was previously shown (if there was one) when user hits start
     [self.viewCard removeFromSuperview];
     countdown.text = @"Get Ready";
+    
+    // now show the stop button (show count button)
     self.startButton.hidden = YES;
     self.stopButton.hidden = NO;
     
