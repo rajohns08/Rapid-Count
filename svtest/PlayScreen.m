@@ -44,6 +44,8 @@ int cardCount = 0;
     
     self.stopButton.hidden = YES;
     
+    self.countdown.textColor = [UIColor cyanColor];
+    
     // set the background image
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"table.png"]];
     
@@ -124,19 +126,19 @@ int cardCount = 0;
     
     // an array of all the card name files
     NSArray *cardNames = [NSArray arrayWithObjects:
-     @"2-club.png", @"2-spade.png", @"2-diamond.png", @"2-heart.png",
-     @"3-club.png", @"3-spade.png", @"3-diamond.png", @"3-heart.png",
-     @"4-club.png", @"4-spade.png", @"4-diamond.png", @"4-heart.png",
-     @"5-club.png", @"5-spade.png", @"5-diamond.png", @"5-heart.png",
-     @"6-club.png", @"6-spade.png", @"6-diamond.png", @"6-heart.png",
-     @"7-club.png", @"7-spade.png", @"7-diamond.png", @"7-heart.png",
-     @"8-club.png", @"8-spade.png", @"8-diamond.png", @"8-heart.png",
-     @"9-club.png", @"9-spade.png", @"9-diamond.png", @"9-heart.png",
-     @"10-club.png", @"10-spade.png", @"10-diamond.png", @"10-heart.png",
-     @"jack-clubs.png", @"jack-spades.png", @"jack-diamonds.png", @"jack-hearts.png",
-     @"queen-clubs.png", @"queen-spades.png", @"queen-diamonds.png", @"queen-hearts.png",
-     @"king-clubs.png", @"king-spades.png", @"king-diamonds.png", @"king-hearts.png",
-     @"ace-clubs.jpg", @"ace-spades.jpg", @"ace-diamonds.jpg", @"ace-hearts.jpg", nil];
+     @"2_of_clubs.png", @"2_of_spades.png", @"2_of_diamonds.png", @"2_of_hearts.png",
+     @"3_of_clubs.png", @"3_of_spades.png", @"3_of_diamonds.png", @"3_of_hearts.png",
+     @"4_of_clubs.png", @"4_of_spades.png", @"4_of_diamonds.png", @"4_of_hearts.png",
+     @"5_of_clubs.png", @"5_of_spades.png", @"5_of_diamonds.png", @"5_of_hearts.png",
+     @"6_of_clubs.png", @"6_of_spades.png", @"6_of_diamonds.png", @"6_of_hearts.png",
+     @"7_of_clubs.png", @"7_of_spades.png", @"7_of_diamonds.png", @"7_of_hearts.png",
+     @"8_of_clubs.png", @"8_of_spades.png", @"8_of_diamonds.png", @"8_of_hearts.png",
+     @"9_of_clubs.png", @"9_of_spades.png", @"9_of_diamonds.png", @"9_of_hearts.png",
+     @"10_of_clubs.png", @"10_of_spades.png", @"10_of_diamonds.png", @"10_of_hearts.png",
+     @"jack_of_clubs.png", @"jack_of_spades.png", @"jack_of_diamonds.png", @"jack_of_hearts.png",
+     @"queen_of_clubs.png", @"queen_of_spades.png", @"queen_of_diamonds.png", @"queen_of_hearts.png",
+     @"king_of_clubs.png", @"king_of_spades.png", @"king_of_diamonds.png", @"king_of_hearts.png",
+     @"ace_of_clubs.png", @"ace_of_spades.png", @"ace_of_diamonds.png", @"ace_of_hearts.png", nil];
     
     // set the image to a random index
     viewCard.image = [UIImage imageNamed:cardNames[num]];
@@ -154,8 +156,17 @@ int cardCount = 0;
     numOfCards++;
     
     // once a full deck has been simulated, cancel the nstimer so this function is called no more
-    if (numOfCards > 52) {
+    if (numOfCards > 1) {
         [self cancelTimer:nil];
+        
+        // animate the finished message after 52 cards
+        countdown.text = @"Finished!";
+        countdown.alpha = 0.0;
+        [self.view bringSubviewToFront:countdown];
+        [UIView animateWithDuration:3.0 animations:^(void)
+         {
+             countdown.alpha = 1.0;
+         }];
     }
 
 }
@@ -198,10 +209,6 @@ int cardCount = 0;
     // reset variables
     timerStarted = false;
     numOfCards = 0;
-    
-    // clear any text
-    countdown.text = nil;
-    
 }
 
 // method for displaying an alert box for showing the user the count
@@ -237,6 +244,13 @@ int cardCount = 0;
     countdown.text = @"Get Ready";
     self.startButton.hidden = YES;
     self.stopButton.hidden = NO;
+    
+    // animate the get ready message
+    countdown.alpha = 0.0;
+    [UIView animateWithDuration:0.5 animations:^(void)
+     {
+         countdown.alpha = 1.0;
+     }];
 }
 
 - (BOOL)is4InchScreen {
